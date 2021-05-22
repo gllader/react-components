@@ -62,17 +62,13 @@ export function App() {
 
   return (
     <div style={{ display: "flex", flexDirection: "row" }}>
-      <SideBar genres={genres} handleClickButton={handleClickButton} selectedGenreId={selectedGenreId}></SideBar>
+      <SideBar
+        genres={genres}
+        handleClickButton={handleClickButton}
+        selectedGenreId={selectedGenreId}
+      ></SideBar>
 
-      <div className="container">
-        <header>
-          <span className="category">
-            Categoria:<span> {selectedGenre.title}</span>
-          </span>
-        </header>
-
-        <Content movies={movies}></Content>
-      </div>
+      <Content movies={movies} selectedGenre={selectedGenre}></Content>
     </div>
   );
 }
